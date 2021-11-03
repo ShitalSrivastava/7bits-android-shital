@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <import type="android.view.View" />
+
+        <variable
+            name="mainViewModel"
+            type="in.sevenbits.shital.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/Theme.SevenBits.PopupOverlay">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="144dp"
+                    android:layout_height="?actionBarSize"
+                    app:srcCompat="@drawable/logo"
+                    android:paddingTop="@dimen/_8sdp"/>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:menu="@menu/menu_main_selection"
+                app:navigationIcon="@drawable/ic_baseline_close_24"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/Theme.SevenBits.PopupOverlay"
+                android:visibility="gone">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_create_selection_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_post_1"
+                    app:srcCompat="@drawable/new_post_1"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:text="Please long press on any product to select!"/>
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_products"
+                android:layout_below="@id/ll_create_selection_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_product" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_error_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:layout_margin="16dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:text="@string/error_message"
+                android:visibility="@{mainViewModel.messageVisibility ? View.VISIBLE : View.GONE}"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:visibility="@{mainViewModel.isLoading ? View.VISIBLE : View.GONE}"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

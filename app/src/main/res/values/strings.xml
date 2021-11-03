@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">7bits</string>
+    <string name="error_message">Unable to load. Please try again later!</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="action_search">Search</string>
+    <string name="action_account">Account</string>
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

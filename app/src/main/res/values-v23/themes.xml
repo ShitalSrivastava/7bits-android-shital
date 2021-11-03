@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SevenBits" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="colorButtonNormal">@color/primary</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+    </style>
+
+    <style name="Theme.SevenBits.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SevenBits.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="Theme.SevenBits.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+</resources>

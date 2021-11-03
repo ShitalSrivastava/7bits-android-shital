@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1048992934823",
+    "project_id": "bits-a17d6",
+    "storage_bucket": "bits-a17d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048992934823:android:f6f4dd232e4c627ddd2482",
+        "android_client_info": {
+          "package_name": "in.sevenbits.shital"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048992934823-pa6aa6gp087rmotbt7v8jcs1i7728f8u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.sevenbits.shital",
+            "certificate_hash": "032228d7b4716e8626e8a220999230a927c7847f"
+          }
+        },
+        {
+          "client_id": "1048992934823-suh7um82bti3ksn8blti8p18fu37k6pk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJUEmjGHahCXOZIThJaALQ83Jc6seDhNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048992934823-suh7um82bti3ksn8blti8p18fu37k6pk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
